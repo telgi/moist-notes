@@ -33,9 +33,9 @@ window.addEventListener("load", function (event) {
 function displayNotes() {
     document.getElementById('notes').innerHTML = "";
     notepad.content.forEach(function (note) {
-    var notes = document.getElementById('notes'),
-    noteschild = document.createElement('div');
-    noteschild.innerHTML = note.content;
-    notes.appendChild(noteschild)
-  })
+      var notes = document.getElementById('notes');
+      noteschild = document.createElement('div');
+      noteschild.innerHTML = note.content;
+      notes.appendChild(noteschild)
+    })
 }
