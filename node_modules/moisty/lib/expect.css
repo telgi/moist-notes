@@ -1,7 +1,29 @@
+@font-face {
+  font-family: 'Moist';
+  src: url('../public/fonts/Moist.otf') format('opentype');
+}
+
+* {
+  font-family: 'Moist';
+  /* text-align: center; */
+}
+
 .passed {
-  background-color: green;
+  color: green;
 }
 
 .failed {
-  background-color: red;
+  color: red;
+}
+
+.not-moist-img {
+  display: none;
+}
+
+.moist-img-hide {
+  display: none;
+}
+
+.not-moist-img-display {
+  display: '';
 }

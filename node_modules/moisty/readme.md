@@ -1,9 +1,9 @@
 An npm package to test your application using pure vanilla JavaScript.
 
-Quick Example Usage of Basic Matchers
---------
+## Quick Example Usage of Basic Matchers
 
 If this is your model:
+
 ```
 function Notepad(name) {
   this.content = []
@@ -13,6 +13,7 @@ function Notepad(name) {
 ```
 
 This could be your test file:
+
 ```
 (function notepadIsEmpty() {
   var notepad = new Notepad();
@@ -36,8 +37,7 @@ This could be your test file:
 })();
 ```
 
-Example Usage of beforeEach and It blocks
---------
+## Example Usage of beforeEach and It blocks
 
 ```
 describe('Notepad', function() {
@@ -64,6 +64,16 @@ describe('Notepad', function() {
 });
 ```
 
-HTML Runner
-------
+## HTML Runner
+
 ![HTML Moist Runner](/public/moisty-screenshot.png?raw=true)
+
+## NOW WITH GIFS!!
+
+### When your tests fail:
+
+![Not Moist](/public/spongebob-gif.gif)
+
+### When your tests pass:
+
+![Moist](/public/moist-gif.gif)
