@@ -49,11 +49,6 @@ function displayNote(noteObject) {
   }
 }
 
-// function _badassifyNoteschild(noteschild, noteObject) {
-//   noteschild.setAttribute("id", noteObject.id);
-//   noteschild.onclick = function() { alert('blah'); };
-// }
-
 function _longNote(notes, noteschild, noteObject) {
   let trimmedNote = noteObject.content.substring(0, 20);
   let note = document.createTextNode(trimmedNote + " ...");

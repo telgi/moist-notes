@@ -10,6 +10,18 @@ body {
   font-family: Indie Flower;
   background: linear-gradient(to right, #6baf9c , #dde9abd4);}
 
+  .container {
+    width: 50%;
+
+  }
+
+  .display{
+    margin-left: 50%;
+    width: 50%;
+    height: 100px;
+    background-color: white;
+  }
+
 #form {
   margin-top: 3em;
 }
