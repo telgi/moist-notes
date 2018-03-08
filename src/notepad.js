@@ -67,5 +67,11 @@ function _appendChild(noteschild, note) {
 // prepend instead of append
 
 function _onClick(content) {
-  alert(content);
+  let noteToBeDisplayed = document.createTextNode(content);
+  let display = document.getElementById('display');
+  display.innerHTML = "";
+  display.appendChild(noteToBeDisplayed);
+  //
+  //
+  // alert(content);
 }
