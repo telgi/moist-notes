@@ -8,10 +8,11 @@ function Note(string) {
   this.content = string
 }
 
+var counter = 1;
+
 var notepad = new Notepad();
 
 window.addEventListener("load", function (event) {
-  console.log(event)
   function sendData(note) {
       var noteObject = new Note(note);
       notepad.content.push(noteObject);
@@ -21,7 +22,6 @@ window.addEventListener("load", function (event) {
   var form = document.getElementById("form");
 
   form.addEventListener("submit", function (event) {
-    console.log(event)
 
     var note = document.getElementById('note').value
 
@@ -35,6 +35,7 @@ window.addEventListener("load", function (event) {
 function displayNote(noteObject) {
   let notes = document.getElementById('notes');
   let noteschild = document.createElement('div');
+  noteschild.setAttribute("id", counter);
   if (noteObject.content.length > 20 ) {
     let trimmedNote = noteObject.content.substring(0, 20);
     let note = document.createTextNode(trimmedNote + " ...");
@@ -44,5 +45,6 @@ function displayNote(noteObject) {
     let note = document.createTextNode(noteObject.content);
     notes.appendChild(noteschild)
     noteschild.appendChild(note);
-  }
+  } // prepend instead of append
+  counter += 1
 }
