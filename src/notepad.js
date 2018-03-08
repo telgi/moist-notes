@@ -36,6 +36,7 @@ function displayNote(noteObject) {
   let notes = document.getElementById('notes');
   let noteschild = document.createElement('div');
   noteschild.setAttribute("id", counter);
+  noteschild.onclick = function() { alert('blah'); };
   if (noteObject.content.length > 20 ) {
     let trimmedNote = noteObject.content.substring(0, 20);
     let note = document.createTextNode(trimmedNote + " ...");
