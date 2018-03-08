@@ -32,12 +32,9 @@ window.addEventListener("load", function (event) {
 });
 
 function addNote(noteObject) {
-    let notes = document.getElementById('notes'); // targets a notes div of html
-    let noteschild = document.createElement('div'); // creates a noteschild div - for future use :)
-    notes.appendChild(noteschild) // put the newly created noteschild div inside of notes div
-    let note = document.createTextNode(noteObject.content); // appendChild - function below - accepts only data of Node type.
-    // Thanks to this operation, we set our string from node.content to be of a Node type.
-    noteschild.appendChild(note); // takes note.content and puts it to noteschild.
+    let notes = document.getElementById('notes');
+    let noteschild = document.createElement('div');
+    let note = document.createTextNode(noteObject.content);
+    notes.appendChild(noteschild)
+    noteschild.appendChild(note);
 }
-
-// to do - add id or class attribute to the noteschild div.
