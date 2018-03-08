@@ -13,8 +13,9 @@ var notepad = new Notepad();
 window.addEventListener("load", function (event) {
 
   function sendData(note) {
-      notepad.content.push(new Note(note));
-      displayNotes();
+      var noteObject = new Note(note);
+      notepad.content.push(noteObject);
+      addNote(noteObject);
   }
 
   var form = document.getElementById("form");
@@ -30,12 +31,13 @@ window.addEventListener("load", function (event) {
 
 });
 
-function displayNotes() {
-    document.getElementById('notes').innerHTML = "";
-    notepad.content.forEach(function (note) {
-      var notes = document.getElementById('notes');
-      noteschild = document.createElement('div');
-      noteschild.innerHTML = note.content;
-      notes.appendChild(noteschild)
-    })
+function addNote(noteObject) {
+    let notes = document.getElementById('notes'); // targets a notes div of html
+    let noteschild = document.createElement('div'); // creates a noteschild div - for future use :)
+    notes.appendChild(noteschild) // put the newly created noteschild div inside of notes div
+    let note = document.createTextNode(noteObject.content); // appendChild - function below - accepts only data of Node type.
+    // Thanks to this operation, we set our string from node.content to be of a Node type.
+    noteschild.appendChild(note); // takes note.content and puts it to noteschild.
 }
+
+// to do - add id or class attribute to the noteschild div.
