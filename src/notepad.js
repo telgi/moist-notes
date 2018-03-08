@@ -4,8 +4,9 @@ function Notepad(name) {
   this.colors = []
 }
 
-function Note(string) {
+function Note(string, id) {
   this.content = string
+  this.id = id
 }
 
 var counter = 1;
@@ -13,11 +14,6 @@ var counter = 1;
 var notepad = new Notepad();
 
 window.addEventListener("load", function (event) {
-  function sendData(note) {
-      var noteObject = new Note(note);
-      notepad.content.push(noteObject);
-      displayNote(noteObject);
-  }
 
   var form = document.getElementById("form");
 
@@ -32,20 +28,43 @@ window.addEventListener("load", function (event) {
 
 });
 
+function sendData(note) {
+    var noteObject = new Note(note, counter);
+    notepad.content.push(noteObject);
+    displayNote(noteObject);
+    counter += 1
+}
+
 function displayNote(noteObject) {
   let notes = document.getElementById('notes');
   let noteschild = document.createElement('div');
-  noteschild.setAttribute("id", counter);
+  noteschild.setAttribute("id", noteObject.id);
   noteschild.onclick = function() { alert('blah'); };
   if (noteObject.content.length > 20 ) {
-    let trimmedNote = noteObject.content.substring(0, 20);
-    let note = document.createTextNode(trimmedNote + " ...");
-    notes.appendChild(noteschild)
-    noteschild.appendChild(note);
+    _longNote(notes, noteschild, noteObject);
   } else {
-    let note = document.createTextNode(noteObject.content);
-    notes.appendChild(noteschild)
-    noteschild.appendChild(note);
-  } // prepend instead of append
-  counter += 1
+    _shortNote(notes, noteschild, noteObject);
+  }
 }
+
+// function _badassifyNoteschild(noteschild, noteObject) {
+//   noteschild.setAttribute("id", noteObject.id);
+//   noteschild.onclick = function() { alert('blah'); };
+// }
+
+function _longNote(notes, noteschild, noteObject) {
+  let trimmedNote = noteObject.content.substring(0, 20);
+  let note = document.createTextNode(trimmedNote + " ...");
+  _appendChild(noteschild, note)
+}
+
+function _shortNote(notes, noteschild, noteObject) {
+  let note = document.createTextNode(noteObject.content);
+  _appendChild(noteschild, note)
+}
+
+function _appendChild(noteschild, note) {
+  notes.appendChild(noteschild);
+  noteschild.appendChild(note);
+}
+// prepend instead of append
