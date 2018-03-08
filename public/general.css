@@ -22,7 +22,13 @@ body {
 
 #notes * {
   margin-top: 1em;
-  width: 20em;
-  background-color: #8ebdb5;
-  margin-left: 3em;
+  padding-left: 1.2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  width: 11em;
+  background-color: #d0f4fc;
+  margin-left: 2em;
+  border-radius: 1em;
+  border-color: #61a46d;
+  border-style: solid;
 }
