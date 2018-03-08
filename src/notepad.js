@@ -1,4 +1,3 @@
-debugger;
 
 function Notepad(name) {
   this.content = [];
@@ -41,7 +40,8 @@ function displayNote(noteObject) {
   let notes = document.getElementById('notes');
   let noteschild = document.createElement('div');
   noteschild.setAttribute("id", noteObject.id);
-  noteschild.onclick = function() {_onClick()};
+  var id = noteObject.id;
+  noteschild.onclick = function() {_onClick(id)};
   if (noteObject.content.length > 20 ) {
     _longNote(notes, noteschild, noteObject);
   } else {
@@ -71,7 +71,7 @@ function _appendChild(noteschild, note) {
 }
 // prepend instead of append
 
-function _onClick () {
-  alert('blah');
+function _onClick(id) {
+  alert(id);
     console.log(alert);
 }
