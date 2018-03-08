@@ -40,8 +40,8 @@ function displayNote(noteObject) {
   let notes = document.getElementById('notes');
   let noteschild = document.createElement('div');
   noteschild.setAttribute("id", noteObject.id);
-  var id = noteObject.id;
-  noteschild.onclick = function() {_onClick(id)};
+  var content = noteObject.content;
+  noteschild.onclick = function() {_onClick(content)};
   if (noteObject.content.length > 20 ) {
     _longNote(notes, noteschild, noteObject);
   } else {
@@ -71,7 +71,6 @@ function _appendChild(noteschild, note) {
 }
 // prepend instead of append
 
-function _onClick(id) {
-  alert(id);
-    console.log(alert);
+function _onClick(content) {
+  alert(content);
 }
