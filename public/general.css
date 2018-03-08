@@ -19,3 +19,10 @@ body {
   width: 20em;
   margin-left: 3em;
 }
+
+#notes * {
+  margin-top: 1em;
+  width: 20em;
+  background-color: #8ebdb5;
+  margin-left: 3em;
+}

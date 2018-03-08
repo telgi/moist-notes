@@ -15,7 +15,7 @@ window.addEventListener("load", function (event) {
   function sendData(note) {
       var noteObject = new Note(note);
       notepad.content.push(noteObject);
-      addNote(noteObject);
+      displayNote(noteObject);
   }
 
   var form = document.getElementById("form");
@@ -31,10 +31,11 @@ window.addEventListener("load", function (event) {
 
 });
 
-function addNote(noteObject) {
+function displayNote(noteObject) {
     let notes = document.getElementById('notes');
     let noteschild = document.createElement('div');
-    let note = document.createTextNode(noteObject.content);
+    let trimmedNote = noteObject.content.substring(0, 20)
+    let note = document.createTextNode(trimmedNote);
     notes.appendChild(noteschild)
     noteschild.appendChild(note);
 }
