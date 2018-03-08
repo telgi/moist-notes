@@ -11,15 +11,19 @@ body {
   background: linear-gradient(to right, #6baf9c , #dde9abd4);}
 
   .container {
+    float: left;
     width: 50%;
-
   }
 
   .display{
-    margin-left: 50%;
-    width: 50%;
-    height: 100px;
-    background-color: white;
+    margin-top: 100px;
+    margin-left: 48%;
+    float: right;
+    margin-right: 10%;
+    position: absolute;
+    width: 40%;
+    height: 500px;
+    background-color: #ffffffcf;
   }
 
 #form {
