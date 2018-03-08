@@ -1,11 +1,11 @@
 function Notepad(name) {
-  this.content = []
-  this.name = name
+  this.content = [];
+  this.name = name;
   this.colors = []
 }
 
 function Note(string, id) {
-  this.content = string
+  this.content = string;
   this.id = id
 }
 
@@ -19,7 +19,7 @@ window.addEventListener("load", function (event) {
 
   form.addEventListener("submit", function (event) {
 
-    var note = document.getElementById('note').value
+    var note = document.getElementById('note').value;
 
     event.preventDefault();
 
