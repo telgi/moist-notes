@@ -15,18 +15,18 @@ body {
     width: 50%;
   }
 
-  #display{
-    margin-top: 100px;
-    margin-left: 48%;
-    float: right;
-    margin-right: 10%;
-    position: absolute;
-    width: 40%;
-    height: 500px;
-    background-color: #ffffffcf;
-    padding: 30px;
-    word-wrap: break-word;
-  }
+#display{
+  margin-top: 3em;
+  margin-left: 48%;
+  float: right;
+  margin-right: 10%;
+  position: absolute;
+  width: 40%;
+  height: 500px;
+  background-color: #ffffffcf;
+  padding: 30px;
+  word-wrap: break-word;
+}
 
 #form {
   margin-top: 3em;
@@ -36,6 +36,13 @@ body {
   height: 7em;
   width: 20em;
   margin-left: 3em;
+  border-style: solid;
+  border-color: #61a46c;
+}
+
+#submit {
+  border-style: solid;
+  border-color: #61a46c;
 }
 
 #notes * {
